@@ -8,7 +8,7 @@ const db = require('../../data/db-config')
   }
 */
 function restricted(req, res, next) {
-  if(!require.session.user) {
+  if(!req.session.user) {
     res.status(401).json({ message: "You shall not pass!" })
     return 
   } else {
